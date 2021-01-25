@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
-<canvas></canvas>
-    
-<script src="/index.js"></script>
+    <div id="inicioJuego">
+        <img class="imgIntro" src="./img/Intro.jpg" alt="Simpsons de fondo">
+        <div id="contenedor">
+            <div id="ctn-botones">
+                <button id="start" class="btn-start">Start</button>
+                <button id="intrucciones" class="btn-start">Instrucciones</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <canvas id="canva" height="500" width="900"></canvas>
+
+    <script src="./js/classes.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/listeners.js"></script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
