@@ -1,17 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<canvas width=""></canvas>
-    
-<script src="./js/classes.js"></script>
-<script src="./js/functions.js"></script>
-<script src="./js/listeners.js"></script>
-<script src="./js/main.js"></script>
+
+    <div id="inicioJuego">
+        <img class="imgIntro" src="./img/Intro.jpg" alt="Simpsons de fondo">
+        <div id="contenedor">
+            <div id="ctn-botones">
+                <button id="intrucciones" class="btn-start">Reglas</button>
+                <button id="start" class="btn-start">Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameBoard" class="esconder">
+        <canvas id="canva" height="600" width="900"></canvas>
+        <div id="tablero">
+            <div id="puntaje" class="tablero-info">Puntaje</div>
+            <div id="vidas" class="tablero-info">vidas restantes</div>
+            <div id="img-ref" class="tablero-info">Imagen de referencia</div>
+            <div id="mensaje" class="tablero-info">Mensaje del personaje</div>
+        </div>
+    </div>  
+
+    <script src="./js/classes.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/listeners.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
+
 </html>
