@@ -18,8 +18,8 @@ class ImagenInit{
 
     mover(){
         setInterval(()=>{
-            this.x += 25
-            frames += 50
+            this.x += 50
+            console.log(frames)
         },1000)
     }
 }
@@ -42,4 +42,5 @@ class ImagenInit{
 let fondo = new ImagenInit(900,600,0,0,"./img/Encuentra4.jpg")
 // let ladyGaga = new Personaje(100,300,0,0,"./img/ladygaga.jpg")
 // let nubes = new Nubes(900,600,0,0,"./img/nubes.jpg")
+
 
