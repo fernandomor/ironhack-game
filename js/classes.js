@@ -1,3 +1,16 @@
+//aqui van las constantes
+const botonStart = document.querySelector("#start")
+const botonReglas = document.querySelector("#intrucciones")
+const divInicio = document.querySelector("#inicioJuego")
+const canva = document.querySelector("#canva")
+ctx = canva.getContext('2d')
+let frames = 0
+let vidas = 3
+let numNivel = 0
+let nivel = document.querySelector("#nivel")
+let speed = 2
+
+
 //aqui van las clases
 class ImagenInit{
     constructor(width,height,x,y,image){
@@ -11,36 +24,21 @@ class ImagenInit{
                 this.dibujar()
         }
     }
-
     dibujar(){
         ctx.drawImage(this.image, this.x, this.y,this.width,this.height)
-    }
-
-    mover(){
-        setInterval(()=>{
-            this.x += 50
-            console.log(frames)
-        },1000)
     }
 }
 
 // class Personaje extends ImagenInit{
-//     constructor(){
-//         this.puntos = 100 // esta es la base de puntos y cada nivel se le sube * 2
-//     }
-    
+//       
 // }
 
-// class Nubes extends ImagenInit{
-//     constructor(x){
-//         super(x)
-//     }
+class Nubes extends ImagenInit{
+    mover(){
+         this.x += speed
+         this.x %= canva.width
+    }
+}
 
-    
-// }
-
-let fondo = new ImagenInit(900,600,0,0,"./img/Encuentra4.jpg")
-// let ladyGaga = new Personaje(100,300,0,0,"./img/ladygaga.jpg")
-// let nubes = new Nubes(900,600,0,0,"./img/nubes.jpg")
 
 
