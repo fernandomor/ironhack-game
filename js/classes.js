@@ -38,7 +38,6 @@ let nivelHTML = document.querySelector("#nivel")
 let vidasHTML = document.querySelector("#vidas")
 
 
-
 //CLASES
 //IMAGEN PADRE
 class ImagenInit{
@@ -49,25 +48,26 @@ class ImagenInit{
         this.height = height
         this.image = new Image()
         this.image.src = image
-        this.image.onload = ()=>{
-                this.dibujar()
+        this.image.onload = () => {
+            this.dibujar()
         }
     }
-    dibujar(){
-        ctx.drawImage(this.image, this.x, this.y,this.width,this.height)
+    dibujar() {
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
     }
 }
+
 //PERSONAJES
 class Personaje extends ImagenInit{
-       
-}
-//NUBES
-class Nubes extends ImagenInit{
-    mover(){
-         this.x += speed
-         this.x %= canva.width
+    positionRnd() {
+        this.x = Math.floor(Math.random() * canva.width)
+        this.y = Math.floor(Math.random() * canva.height)
     }
 }
-
-
-
+//NUBES
+class Nubes extends ImagenInit {
+    mover() {
+        this.x += speed
+        this.x %= canva.width
+    }
+}
