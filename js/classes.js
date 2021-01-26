@@ -5,7 +5,8 @@ ctx = canva.getContext('2d')
 let frames = 0
 let numVidas = 3
 let numNivel = 0
-let speed = 0
+let speed = 3
+let statusRnd = false
 //OBJETOS Y ARRGLOS
 const characters = {
     ladyGaga:{
@@ -36,7 +37,6 @@ const botonReglas = document.querySelector("#intrucciones")
 const divInicio = document.querySelector("#inicioJuego")
 let nivelHTML = document.querySelector("#nivel")
 let vidasHTML = document.querySelector("#vidas")
-
 
 //CLASES
 //IMAGEN PADRE
