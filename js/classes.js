@@ -1,19 +1,47 @@
-//aqui van las constantes
+//CANVAS
+const canva = document.querySelector("#canva")
+ctx = canva.getContext('2d')
+//VARIABLES
+let frames = 0
+let numVidas = 3
+let numNivel = 0
+let speed = 0
+//OBJETOS Y ARRGLOS
+const characters = {
+    ladyGaga:{
+        img:"",
+        cancion: "",
+        respuestas:["Hannah Montana",]
+    },
+    amlo:{
+
+    },
+    spears:{
+
+    },
+    elton:{
+
+    },
+    theDoors:{
+
+    },
+    metallica:{
+
+    }
+}
+
+//SELECTORES
 const botonStart = document.querySelector("#start")
 const botonReglas = document.querySelector("#intrucciones")
 const divInicio = document.querySelector("#inicioJuego")
-const canva = document.querySelector("#canva")
-ctx = canva.getContext('2d')
-let frames = 0
-let vidas = 3
-let numNivel = 0
-let nivel = document.querySelector("#nivel")
-let speed = 2
+let nivelHTML = document.querySelector("#nivel")
+let vidasHTML = document.querySelector("#vidas")
 
 
-//aqui van las clases
-class ImagenInit {
-    constructor(width, height, x, y, image) {
+//CLASES
+//IMAGEN PADRE
+class ImagenInit{
+    constructor(width,height,x,y,image){
         this.x = x
         this.y = y
         this.width = width
@@ -29,15 +57,14 @@ class ImagenInit {
     }
 }
 
-class Personaje extends ImagenInit {
-
+//PERSONAJES
+class Personaje extends ImagenInit{
     positionRnd() {
         this.x = Math.floor(Math.random() * canva.width)
         this.y = Math.floor(Math.random() * canva.height)
     }
-
 }
-
+//NUBES
 class Nubes extends ImagenInit {
     mover() {
         this.x += speed
