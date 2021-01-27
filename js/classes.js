@@ -8,6 +8,7 @@ let numNivel = 1
 let numPuntaje = 0
 let speed = 3
 let statusRnd = false
+let statusRndDos = false
 let nubesAct = false
 let mostrarSeccionPreguntas = true
 const arrRespuestasCorrectas = ["Lady Gaga","AMLO","La brittany","Elton John","Jim Morrison","James Hetfield"]
@@ -50,7 +51,6 @@ const characters = {
         mensaje: "Justicia para todos, incluso para ti"
     }
 }
-
 //SELECTORES
 const botonStart = document.querySelector("#start")
 const botonReglas = document.querySelector("#intrucciones")
@@ -69,7 +69,7 @@ let opcionTres = document.querySelector("#op3")
 //CLASES
 //IMAGEN PADRE
 class ImagenInit {
-    constructor(width, height, x, y, image) {
+    constructor(width, height, x, y, image,nivel) {
         this.x = x
         this.y = y
         this.width = width
@@ -79,6 +79,7 @@ class ImagenInit {
         this.image.onload = () => {
             this.dibujar()
         }
+        this.nivel = nivel
     }
     dibujar() {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
@@ -98,3 +99,4 @@ class Nubes extends ImagenInit {
         this.x %= canva.width
     }
 }
+//INCIALIZAMOS TODAS LAS CLASES

@@ -49,6 +49,7 @@ function respuestaCorrecta(opcion){
         seccionPreguntas.classList.add("esconder")
         numPuntaje += 300
     }else{
+        nubesAct = true
         alert("respuesta INCORRECTA, pero te dejo mi foto")
         seccionPreguntas.classList.add("esconder")
     }
@@ -73,21 +74,31 @@ function ganador(){
     }
 }
 function nivelUno(){
-    // nubes.mover() //no se pone el nombre de la clase, se pone el nuevo objeto que creaste porque la clase es solo  "la fabrica" aún no le has pasado nada
     ctx.clearRect(0, 0, 900, 600)
-    fondo.dibujar()
+    if(mostrarSeccionPreguntas === false){
+        if(statusRndDos===false){
+            infoPersonaje(characters.ladyGaga)
+            statusRndDos = true
+        }
+        if(nubesAct===true){
+            ctx.clearRect(0, 0, 900, 600)
+            nubes.mover()
+            fondo.dibujar()
+            britney.dibujar()
+            nubes.dibujar()
+        }else{
+            fondo.dibujar()
+            britney.dibujar()
+        }
+    }
     if(statusRnd===false){
-        statusRnd=true
         britney.positionRnd()
         respuestasPredefinidas(characters.ladyGaga)
         musicaPersonaje(characters.ladyGaga)
-        infoPersonaje(characters.ladyGaga)
+        statusRnd=true
     }
-    
-    britney.dibujar()
-    // nubes.dibujar()
 }
 
-
-
-
+let fondo = new ImagenInit(900, 600, 0, 0, "./img/nivel0.jpg")
+let britney = new Personaje(100, 100, 0, 0, "./img/britneySpears.png",1)
+let nubes = new Nubes(900, 800, 0, 0, "./img/nubes.png")
