@@ -24,3 +24,11 @@ canva.addEventListener(`mousedown`, (e) => {
     let mousePos = getMousePos(canva, e)
     comparePos(britney, mousePos)
 });
+//como pasar esto a funcion ?- ahi se puede poner una funcion que retorne el nombre del personaje
+
+
+//POSICIÓN DEL MOUSE
+canva.addEventListener(`mousedown`, (e) => {
+    let mousePos = getMousePos(canva, e)
+    comparePos(britney, mousePos)
+});
