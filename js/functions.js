@@ -10,7 +10,7 @@ function musicaPersonaje(personaje) {
     divy.innerHTML = `<audio controls>
     <source src= ${personaje.cancion} type="audio/mpeg">
     Your browser does not support the audio tag.
-  </audio>`
+    </audio>`
 }
 
 function infoPersonaje(personaje) {
@@ -23,9 +23,9 @@ function infoPersonaje(personaje) {
 }
 
 function respuestasPredefinidas(personaje) {
-    opcionUno.innerHTML = (personaje.respuestas[0])
-    opcionDos.innerHTML = (personaje.respuestas[1])
-    opcionTres.innerHTML = (personaje.respuestas[2])
+    opcionUno.innerHTML = (characters.personaje.respuestas[0])
+    opcionDos.innerHTML = (characters.personaje.respuestas[1])
+    opcionTres.innerHTML = (characters.personaje.respuestas[2])
 }
 
 function getMousePos(canvas, evt) {
@@ -42,6 +42,7 @@ function comparePos(personaje, mouseP) {
     if (mousePos.x > personajePos.x && mousePos.x < (personajePos.x + personajePos.width)) {
         if (mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)) {
             numPuntaje += 500
+            numNivel++
         }
     } else {
         numVidas--
@@ -83,32 +84,29 @@ function ganador() {
     }
 }
 
-function nivelUno() {
+function niveles(personaje, bck, personajeClase) {
+
     ctx.clearRect(0, 0, 900, 600)
     if (mostrarSeccionPreguntas === false) {
         if (statusRndDos === false) {
-            infoPersonaje(characters.ladyGaga)
+            infoPersonaje(personaje)
             statusRndDos = true
         }
         if (nubesAct === true) {
             ctx.clearRect(0, 0, 900, 600)
             nubes.mover()
-            fondo.dibujar()
-            britney.dibujar()
+            bck.dibujar()
+            personajeClase.dibujar()
             nubes.dibujar()
         } else {
-            fondo.dibujar()
-            britney.dibujar()
+            bck.dibujar()
+            personajeClase.dibujar()
         }
     }
     if (statusRnd === false) {
-        britney.positionRnd()
-        respuestasPredefinidas(characters.ladyGaga)
-        musicaPersonaje(characters.ladyGaga)
+        personajeClase.positionRnd()
+        respuestasPredefinidas(personaje)
+        musicaPersonaje(personaje)
         statusRnd = true
     }
 }
-
-let fondo = new ImagenInit(900, 600, 0, 0, "./img/nivel0.jpg")
-let britney = new Personaje(100, 100, 0, 0, "./img/britneySpears.png", 1)
-let nubes = new Nubes(900, 800, 0, 0, "./img/nubes.png")
