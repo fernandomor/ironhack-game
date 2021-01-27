@@ -1,15 +1,18 @@
-//INICIALIZACIÓN DE IMAGENES PRUEBA
-// let fondo = new ImagenInit(900, 600, 0, 0, "./img/nivel0.jpg")
-// let nubes = new Nubes(900, 800, 0, 0, "./img/nubes.png")
-// let britney = new Personaje(100, 100, 0, 0, "./img/britneySpears.png")
-updateCanvas()
-
-
 //INICIAR JUEGO
 botonStart.addEventListener("click", ()=>{
     divInicio.classList.add("esconder")
     canva.classList.remove("esconder")
     canva.classList.add("mostrar")
+})
+//BOTONES DE RESPUESTAS
+opcionUno.addEventListener("click", ()=>{
+    respuestaCorrecta(opcionUno)
+})
+opcionDos.addEventListener("click", ()=>{
+    respuestaCorrecta(opcionDos)
+})
+opcionTres.addEventListener("click", ()=>{
+    respuestaCorrecta(opcionTres)
 })
 
 //REGLAS DEL JUEGO
@@ -21,5 +24,7 @@ canva.addEventListener (`mousedown`, (e) => {
     let mousePos = getMousePos(canva,e)
     comparePos(britney,mousePos)
 });
+
+
 
 

@@ -4,11 +4,13 @@ ctx = canva.getContext('2d')
 //VARIABLES
 let frames = 0
 let numVidas = 3
-let numNivel = 0
+let numNivel = 1
 let numPuntaje = 0
 let speed = 3
 let statusRnd = false
 let nubesAct = false
+let mostrarSeccionPreguntas = true
+const arrRespuestasCorrectas = ["Lady Gaga","AMLO","La brittany","Elton John","Jim Morrison","James Hetfield"]
 //OBJETOS Y ARREGLOS
 const characters = {
     ladyGaga: {

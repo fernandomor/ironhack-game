@@ -42,20 +42,52 @@ function comparePos(personaje,mouseP){
         numVidas--
     }
 }
-
-function updateCanvas(){
-    revisarTablero()
-    // nubes.mover() //no se pone el nombre de la clase, se pone el nuevo objeto que creaste porque la clase es solo  "la fabrica" aún no le has pasado nada
-    // ctx.clearRect(0, 0, 900, 600)
-    // fondo.dibujar()
-    // if(statusRnd===false){
-    //     statusRnd=true
-    //     britney.positionRnd()
-    // }
-    // britney.dibujar()
-    // nubes.dibujar()
-    requestAnimationFrame(updateCanvas)
+function respuestaCorrecta(opcion){
+    let palabra = opcion.innerHTML
+    if(arrRespuestasCorrectas.includes(palabra)){
+        alert("respuesta correcta , te dare unos puntos extras")
+        seccionPreguntas.classList.add("esconder")
+        numPuntaje += 300
+    }else{
+        alert("respuesta INCORRECTA, pero te dejo mi foto")
+        seccionPreguntas.classList.add("esconder")
+    }
+    if(mostrarSeccionPreguntas === true){
+        mostrarSeccionPreguntas = false
+    }
 }
+function mostrarPregunta(){
+    if(mostrarSeccionPreguntas === false){
+        seccionPreguntas.classList.remove("esconder")
+        mostrarSeccionPreguntas = true
+    }
+}
+function looser(){
+    if(numVidas=0){
+        alert("NOS CONDENASTE A TODOS, GRACIAS")
+    }
+}
+function ganador(){
+    if(numNivel=5){
+        alert("NOS HAS SALVADO, ESTAMOS AGRADECIDOS")
+    }
+}
+function nivelUno(){
+    // nubes.mover() //no se pone el nombre de la clase, se pone el nuevo objeto que creaste porque la clase es solo  "la fabrica" aún no le has pasado nada
+    ctx.clearRect(0, 0, 900, 600)
+    fondo.dibujar()
+    if(statusRnd===false){
+        statusRnd=true
+        britney.positionRnd()
+        respuestasPredefinidas(characters.ladyGaga)
+        musicaPersonaje(characters.ladyGaga)
+        infoPersonaje(characters.ladyGaga)
+    }
+    
+    britney.dibujar()
+    // nubes.dibujar()
+}
+
 
 
 
