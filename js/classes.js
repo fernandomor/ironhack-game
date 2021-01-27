@@ -5,29 +5,47 @@ ctx = canva.getContext('2d')
 let frames = 0
 let numVidas = 3
 let numNivel = 0
+let numPuntaje = 0
 let speed = 3
 let statusRnd = false
+let nubes = false
 //OBJETOS Y ARRGLOS
 const characters = {
     ladyGaga:{
-        img:"",
-        cancion: "",
-        respuestas:["Hannah Montana",]
+        img:"./img/ladygaga.jpg",
+        cancion: "./Canciones/pokerface.mp3",
+        respuestas:["Hannah Montana", "Lady Gaga", "Beyonce"],
+        mensaje: "Gracias pequeño mounstro por saber que soy tu mama mounstra"
     },
     amlo:{
-
+        img:"./img/peje.jpeg",
+        cancion: "./Canciones/amlo.mp3",
+        respuestas:["AMLO", "Musollini", "Hitler"],
+        mensaje: "Grajias .........pejelagarto............ por...........todo, y el PRI roboj maj"
     },
     spears:{
-
+        img:"./img/britneySpears.png",
+        cancion: "./Canciones/spears.mp3",
+        respuestas:["La brittany", "Kim Kardashian", "Madonna"],
+        mensaje: "Ups baby, si soy yo"
     },
     elton:{
-
+        img:"./img/elton.png",
+        cancion: "./Canciones/saturday.mp3",
+        respuestas:["Billy Joel", "Freddie Mercury", "Elton John"],
+        mensaje: "Ya quiero mi taza de té, gracias por buscarme rocketman"
     },
     theDoors:{
-
+        img:"./img/morrison.jpg",
+        cancion: "./Canciones/doors.mp3",
+        respuestas:["Jonh Lennon", "Kurt Cobain", "Jim Morrison"],
+        mensaje: "Abriste la puerta correcta, salvame"
     },
     metallica:{
-
+        img:"./img/james.png",
+        cancion: "./Canciones/metalica.mp3",
+        respuestas:["James Hetfield", "Lars Ulrich", "Paul Stanley"],
+        mensaje: "Justicia para todos, incluso para ti"
     }
 }
 
@@ -37,6 +55,12 @@ const botonReglas = document.querySelector("#intrucciones")
 const divInicio = document.querySelector("#inicioJuego")
 let nivelHTML = document.querySelector("#nivel")
 let vidasHTML = document.querySelector("#vidas")
+let puntosHTML = document.querySelector("#puntos")
+let seccionPreguntas = document.querySelector("#preguntas")
+let imgRef = document.querySelector("#img-ref")
+let msgPersonaje = document.querySelector("#mensaje")
+let musPersonaje = document.querySelector("#musica")
+
 
 //CLASES
 //IMAGEN PADRE
@@ -56,7 +80,6 @@ class ImagenInit{
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
     }
 }
-
 //PERSONAJES
 class Personaje extends ImagenInit{
     positionRnd() {

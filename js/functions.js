@@ -1,39 +1,63 @@
-
-function revisarNivel(){
+function revisarTablero(){
     nivelHTML.innerText = `Nivel: ${numNivel}`
-}
-function revisarVida(){
     vidasHTML.innerText = `Vidas: ${numVidas}`
+    puntosHTML.innerHTML = `Puntaje: ${numPuntaje}`
 }
-function revisarPuntaje(){
+function musicaPersonaje(personaje){
+    let divy = document.createElement("div")
+    musPersonaje.appendChild(divy)
+    divy.innerHTML = `<audio controls>
+    <source src= ${personaje.cancion} type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>`
+}
 
+function infoPersonaje(personaje){
+    let divImg = document.createElement("div")
+    let divMsg = document.createElement("div")
+    imgRef.appendChild(divImg)
+    msgPersonaje.appendChild(divMsg)
+    divImg.innerHTML = `<img width="40" src="${personaje.img}" alt="">`
+    divMsg.innerHTML = `<p>${personaje.mensaje}</p>`
 }
-function imgReferencia(){
 
-}
-function msjPersonaje(){
 
+musicaPersonaje(characters.ladyGaga)
+infoPersonaje(characters.ladyGaga)
+
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+        x: Math.floor(evt.clientX - rect.left),
+        y: Math.floor(evt.clientY - rect.top)
+    };
 }
-function revisarNivel() {
-    nivel.innerText = `Nivel: ${numNivel}`
-}
-function preguntas(){
-    
+
+function comparePos(personaje,mouseP){
+    let mousePos = mouseP
+    let personajePos = personaje
+    if(mousePos.x>personajePos.x && mousePos.x < (personajePos.x+personajePos.width)){
+        if(mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)){
+            numPuntaje += 500
+        }
+    }else{
+        numVidas--
+    }
 }
 
 function updateCanvas(){
-    revisarNivel()
-    revisarVida()
-    nubes.mover() //no se pone el nombre de la clase, se pone el nuevo objeto que creaste porque la clase es solo  "la fabrica" aún no le has pasado nada
-    ctx.clearRect(0, 0, 900, 600)
-    fondo.dibujar()
-    nubes.dibujar()
-    if(statusRnd===false){
-        statusRnd=true
-        britney.positionRnd()
-    }
-    britney.dibujar()
+    revisarTablero()
+    // nubes.mover() //no se pone el nombre de la clase, se pone el nuevo objeto que creaste porque la clase es solo  "la fabrica" aún no le has pasado nada
+    // ctx.clearRect(0, 0, 900, 600)
+    // fondo.dibujar()
+    // if(statusRnd===false){
+    //     statusRnd=true
+    //     britney.positionRnd()
+    // }
+    // britney.dibujar()
+    // nubes.dibujar()
     requestAnimationFrame(updateCanvas)
 }
+
 
 
