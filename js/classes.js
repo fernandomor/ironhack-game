@@ -1,15 +1,15 @@
 //CANVAS
 const canva = document.querySelector("#canva")
 ctx = canva.getContext('2d')
-    //VARIABLES
+//VARIABLES
 let frames = 0
 let numVidas = 3
 let numNivel = 0
 let numPuntaje = 0
 let speed = 3
 let statusRnd = false
-let nubes = false
-    //OBJETOS Y ARREGLOS
+let nubesAct = false
+//OBJETOS Y ARREGLOS
 const characters = {
     ladyGaga: {
         img: "./img/ladygaga.jpg",
@@ -63,8 +63,6 @@ let musPersonaje = document.querySelector("#musica")
 let opcionUno = document.querySelector("#op1")
 let opcionDos = document.querySelector("#op2")
 let opcionTres = document.querySelector("#op3")
-
-
 
 //CLASES
 //IMAGEN PADRE
