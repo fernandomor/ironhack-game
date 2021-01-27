@@ -17,7 +17,7 @@ function infoPersonaje(personaje){
     let divMsg = document.createElement("div")
     imgRef.appendChild(divImg)
     msgPersonaje.appendChild(divMsg)
-    divImg.innerHTML = `<img width="40" src="${personaje.img}" alt="">`
+    divImg.innerHTML = `<img width="300" src="${personaje.img}" alt="">`
     divMsg.innerHTML = `<p>${personaje.mensaje}</p>`
 }
 
