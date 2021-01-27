@@ -1,7 +1,7 @@
 //CANVAS
 const canva = document.querySelector("#canva")
 ctx = canva.getContext('2d')
-//VARIABLES
+    //VARIABLES
 let frames = 0
 let numVidas = 3
 let numNivel = 1
@@ -10,8 +10,8 @@ let speed = 3
 let statusRnd = false
 let nubesAct = false
 let mostrarSeccionPreguntas = true
-const arrRespuestasCorrectas = ["Lady Gaga","AMLO","La brittany","Elton John","Jim Morrison","James Hetfield"]
-//OBJETOS Y ARREGLOS
+const arrRespuestasCorrectas = ["Lady Gaga", "AMLO", "La brittany", "Elton John", "Jim Morrison", "James Hetfield"]
+    //OBJETOS Y ARREGLOS
 const characters = {
     ladyGaga: {
         img: "./img/ladygaga.jpg",
