@@ -21,23 +21,24 @@ body {
 .mostrar {
     display: block;
 }
-.questions{
+
+.questions {
     margin-left: 230px;
     margin-top: 190px;
     position: absolute;
-    font-family:'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
-.questions button{
+
+.questions button {
     width: 200px;
-    height: 80px;
     background-color: rgb(242, 229, 112);
     border: 3px solid black;
     border-radius: 5px;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Press Start 2P', cursive;
     justify-content: center;
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .btn-start {
@@ -67,7 +68,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 70px;
-
 }
 
 #tablero {

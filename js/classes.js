@@ -1,7 +1,7 @@
 //CANVAS
 const canva = document.querySelector("#canva")
 ctx = canva.getContext('2d')
-//VARIABLES
+    //VARIABLES
 let frames = 0
 let numVidas = 3
 let numNivel = 0
@@ -9,42 +9,42 @@ let numPuntaje = 0
 let speed = 3
 let statusRnd = false
 let nubes = false
-//OBJETOS Y ARRGLOS
+    //OBJETOS Y ARREGLOS
 const characters = {
-    ladyGaga:{
-        img:"./img/ladygaga.jpg",
+    ladyGaga: {
+        img: "./img/ladygaga.jpg",
         cancion: "./Canciones/pokerface.mp3",
-        respuestas:["Hannah Montana", "Lady Gaga", "Beyonce"],
+        respuestas: ["Hannah Montana", "Lady Gaga", "Beyonce"],
         mensaje: "Gracias pequeño mounstro por saber que soy tu mama mounstra"
     },
-    amlo:{
-        img:"./img/peje.jpeg",
+    amlo: {
+        img: "./img/peje.jpeg",
         cancion: "./Canciones/amlo.mp3",
-        respuestas:["AMLO", "Musollini", "Hitler"],
+        respuestas: ["AMLO", "Musollini", "Hitler"],
         mensaje: "Grajias .........pejelagarto............ por...........todo, y el PRI roboj maj"
     },
-    spears:{
-        img:"./img/britneySpears.png",
+    spears: {
+        img: "./img/britneySpears.png",
         cancion: "./Canciones/spears.mp3",
-        respuestas:["La brittany", "Kim Kardashian", "Madonna"],
+        respuestas: ["La brittany", "Kim Kardashian", "Madonna"],
         mensaje: "Ups baby, si soy yo"
     },
-    elton:{
-        img:"./img/elton.png",
+    elton: {
+        img: "./img/elton.png",
         cancion: "./Canciones/saturday.mp3",
-        respuestas:["Billy Joel", "Freddie Mercury", "Elton John"],
+        respuestas: ["Billy Joel", "Freddie Mercury", "Elton John"],
         mensaje: "Ya quiero mi taza de té, gracias por buscarme rocketman"
     },
-    theDoors:{
-        img:"./img/morrison.jpg",
+    theDoors: {
+        img: "./img/morrison.jpg",
         cancion: "./Canciones/doors.mp3",
-        respuestas:["Jonh Lennon", "Kurt Cobain", "Jim Morrison"],
+        respuestas: ["Jonh Lennon", "Kurt Cobain", "Jim Morrison"],
         mensaje: "Abriste la puerta correcta, salvame"
     },
-    metallica:{
-        img:"./img/james.png",
+    metallica: {
+        img: "./img/james.png",
         cancion: "./Canciones/metalica.mp3",
-        respuestas:["James Hetfield", "Lars Ulrich", "Paul Stanley"],
+        respuestas: ["James Hetfield", "Lars Ulrich", "Paul Stanley"],
         mensaje: "Justicia para todos, incluso para ti"
     }
 }
@@ -60,12 +60,16 @@ let seccionPreguntas = document.querySelector("#preguntas")
 let imgRef = document.querySelector("#img-ref")
 let msgPersonaje = document.querySelector("#mensaje")
 let musPersonaje = document.querySelector("#musica")
+let opcionUno = document.querySelector("#op1")
+let opcionDos = document.querySelector("#op2")
+let opcionTres = document.querySelector("#op3")
+
 
 
 //CLASES
 //IMAGEN PADRE
-class ImagenInit{
-    constructor(width,height,x,y,image){
+class ImagenInit {
+    constructor(width, height, x, y, image) {
         this.x = x
         this.y = y
         this.width = width
@@ -81,7 +85,7 @@ class ImagenInit{
     }
 }
 //PERSONAJES
-class Personaje extends ImagenInit{
+class Personaje extends ImagenInit {
     positionRnd() {
         this.x = Math.floor(Math.random() * canva.width)
         this.y = Math.floor(Math.random() * canva.height)
