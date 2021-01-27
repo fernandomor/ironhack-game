@@ -31,12 +31,23 @@ function getMousePos(canvas, evt) {
         y: Math.floor(evt.clientY - rect.top)
     };
 }
+function reset(){
+    statusRndDos = false
+    statusRnd=false
+    nubesAct = false
+    imgRef.innerHTML = ""
+    msgPersonaje.innerHTML = ""
+    musPersonaje.innerHTML = ""
+}
 function comparePos(personaje,mouseP){
     let mousePos = mouseP
     let personajePos = personaje
     if(mousePos.x>personajePos.x && mousePos.x < (personajePos.x+personajePos.width)){
         if(mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)){
             numPuntaje += 500
+            numNivel++
+            mostrarPregunta()
+            reset()
         }
     }else{
         numVidas--
@@ -64,41 +75,41 @@ function mostrarPregunta(){
     }
 }
 function looser(){
-    if(numVidas=0){
+    if(numVidas===0){
         alert("NOS CONDENASTE A TODOS, GRACIAS")
+        numNivel=1
     }
 }
 function ganador(){
-    if(numNivel=5){
         alert("NOS HAS SALVADO, ESTAMOS AGRADECIDOS")
-    }
+        numNivel=1
 }
-function nivelUno(){
+function niveles(objCharacters,clasPersonaje,clasFondo){
     ctx.clearRect(0, 0, 900, 600)
     if(mostrarSeccionPreguntas === false){
         if(statusRndDos===false){
-            infoPersonaje(characters.ladyGaga)
+            infoPersonaje(objCharacters)
             statusRndDos = true
         }
         if(nubesAct===true){
             ctx.clearRect(0, 0, 900, 600)
             nubes.mover()
-            fondo.dibujar()
-            britney.dibujar()
+            clasFondo.dibujar()
+            clasPersonaje.dibujar()
             nubes.dibujar()
         }else{
-            fondo.dibujar()
-            britney.dibujar()
+            clasFondo.dibujar()
+            clasPersonaje.dibujar()
         }
     }
     if(statusRnd===false){
-        britney.positionRnd()
-        respuestasPredefinidas(characters.ladyGaga)
-        musicaPersonaje(characters.ladyGaga)
+        clasPersonaje.positionRnd()
+        respuestasPredefinidas(objCharacters)
+        musicaPersonaje(objCharacters)
         statusRnd=true
     }
 }
 
-let fondo = new ImagenInit(900, 600, 0, 0, "./img/nivel0.jpg")
-let britney = new Personaje(100, 100, 0, 0, "./img/britneySpears.png",1)
-let nubes = new Nubes(900, 800, 0, 0, "./img/nubes.png")
+
+//los obejots  se pasan como tal osea character.ladyGaga , no puedes pasar a ladygaga como un argumento 
+//en los métodos si puedes hacer eso porque los inicializas en una variable 

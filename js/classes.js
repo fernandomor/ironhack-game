@@ -24,7 +24,7 @@ const characters = {
         img: "./img/peje.jpeg",
         cancion: "./Canciones/amlo.mp3",
         respuestas: ["AMLO", "Musollini", "Hitler"],
-        mensaje: "Grajias .........pejelagarto............ por...........todo, y el PRI roboj maj"
+        mensaje: "Grajias .....pejelagarto....... por.....todo, y el PRI roboj maj"
     },
     spears: {
         img: "./img/britneySpears.png",
@@ -99,4 +99,5 @@ class Nubes extends ImagenInit {
         this.x %= canva.width
     }
 }
-//INCIALIZAMOS TODAS LAS CLASES
+
+
