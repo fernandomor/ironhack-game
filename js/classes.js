@@ -66,7 +66,7 @@ let opcionUno = document.querySelector("#op1")
 let opcionDos = document.querySelector("#op2")
 let opcionTres = document.querySelector("#op3")
 let modal = document.querySelectorAll("#myModal")
-let span = document.querySelectorAll("#close")
+let span = document.querySelectorAll(".close")
 
 
 //CLASES

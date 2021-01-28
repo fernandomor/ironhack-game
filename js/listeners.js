@@ -30,15 +30,14 @@ opcionTres.addEventListener("click", ()=>{
 })
 //REGLAS DEL JUEGO
 botonReglas.addEventListener("click", ()=>{
-    modal.style.display = "block";
+    modal[0].style.display = "block";
 })
 //CERRAR MODAL
-span.onclick = function() {
-    modal.forEach(e=>{
-        e.style.display = "none";
+modal.forEach((e)=>{
+    e.addEventListener("click",()=>{
+        e.style.display = "none"
     })
-    
-  }
+})
 //POSICIÓN DEL MOUSE
 canva.addEventListener (`mousedown`, (e) => {
     let mousePos = getMousePos(canva,e)

@@ -64,12 +64,12 @@ function comparePos(personaje, mouseP) {
 function respuestaCorrecta(opcion) {
     let palabra = opcion.innerHTML
     if (arrRespuestasCorrectas.includes(palabra)) {
-        alert("respuesta correcta , te dare unos puntos extras")
+        modal[3].style.display = "block"
         seccionPreguntas.classList.add("esconder")
         numPuntaje += 300
     } else {
         nubesAct = true
-        alert("respuesta INCORRECTA, pero te dejo mi foto")
+        modal[4].style.display = "block"
         seccionPreguntas.classList.add("esconder")
     }
     if (mostrarSeccionPreguntas === true) {
@@ -86,13 +86,13 @@ function mostrarPregunta() {
 
 function looser() {
     if (numVidas === 0) {
-        modal.style.display = "block";
+        modal[1].style.display = "block"
         numNivel = 1
     }
 }
 
 function ganador() {
-    alert("NOS HAS SALVADO, ESTAMOS AGRADECIDOS")
+    modal[2].style.display = "block"
     numNivel = 1
 }
 
