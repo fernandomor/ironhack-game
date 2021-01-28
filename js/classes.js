@@ -70,7 +70,6 @@ let myModalLooser = document.getElementById("myModalLooser")
 let span = document.getElementsByClassName("close")[0]
 let span2 = document.getElementsByClassName("close")[1]
 
-
 //CLASES
 //IMAGEN PADRE
 class ImagenInit {
