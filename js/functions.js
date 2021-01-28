@@ -63,23 +63,6 @@ function comparePos(personaje, mouseP) {
     }
 }
 
-function comparePos(personaje, mouseP) {
-    let mousePos = mouseP
-    let personajePos = personaje
-    if (mousePos.x > personajePos.x && mousePos.x < (personajePos.x + personajePos.width)) {
-        if (mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)) {
-            numPuntaje += 500
-            numNivel++
-
-            mostrarPregunta()
-            reset()
-
-        }
-    } else {
-        numVidas--
-    }
-}
-
 function respuestaCorrecta(opcion) {
     let palabra = opcion.innerHTML
     if (arrRespuestasCorrectas.includes(palabra)) {
