@@ -24,4 +24,5 @@ function updateCanvas() {
     }
     requestAnimationFrame(updateCanvas)
 }
+
 updateCanvas()

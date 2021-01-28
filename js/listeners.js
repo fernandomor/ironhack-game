@@ -25,28 +25,32 @@ opcionUno.addEventListener("click", () => {
 opcionDos.addEventListener("click", () => {
     respuestaCorrecta(opcionDos)
 })
-opcionTres.addEventListener("click", () => {
-        respuestaCorrecta(opcionTres)
-    })
-    //REGLAS DEL JUEGO
-botonReglas.addEventListener("click", () => {
-
-    })
-    //POSICIÓN DEL MOUSE
-canva.addEventListener(`mousedown`, (e) => {
-    let mousePos = getMousePos(canva, e)
-    if (numNivel === 1) {
-        comparePos(spears, mousePos)
-    } else if (numNivel === 2) {
-        comparePos(elton, mousePos)
-    } else if (numNivel === 3) {
-        comparePos(ladyGaga, mousePos)
-    } else if (numNivel === 4) {
-        comparePos(theDoors, mousePos)
-    } else if (numNivel === 5) {
-        comparePos(amlo, mousePos)
-    } else if (numNivel === 6) {
-        comparePos(metallica, mousePos)
+opcionTres.addEventListener("click", ()=>{
+    respuestaCorrecta(opcionTres)
+})
+//REGLAS DEL JUEGO
+botonReglas.addEventListener("click", ()=>{
+    myModalInstrucciones.style.display = "block";
+})
+//CERRAR MODAL
+span.onclick = function() {
+    myModalInstrucciones.style.display = "none";
+  }
+//POSICIÓN DEL MOUSE
+canva.addEventListener (`mousedown`, (e) => {
+    let mousePos = getMousePos(canva,e)
+    if(numNivel===1){
+        comparePos(spears,mousePos)
+    }else if(numNivel===2){
+        comparePos(elton,mousePos)
+    }else if(numNivel === 3){
+        comparePos(ladyGaga,mousePos)
+    }else if(numNivel === 4){
+        comparePos(theDoors,mousePos)
+    }else if(numNivel === 5){
+        comparePos(amlo,mousePos)
+    }else if(numNivel === 6){
+        comparePos(metallica,mousePos)
     }
 
 });
