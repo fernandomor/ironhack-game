@@ -23,19 +23,19 @@ body {
 }
 
 .questions {
-    margin-left: 230px;
-    margin-top: 190px;
+    margin-left: 12%;
+    margin-top: 10%;
     position: absolute;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
 }
 
 .questions button {
-    width: 200px;
+    width: 50%;
     background-color: rgb(242, 229, 112);
     border: 3px solid black;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Press Start 2P', cursive;
     justify-content: center;
     padding: 20px;
@@ -67,7 +67,7 @@ body {
 #gameBoard {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 70px;
+    margin-top: 2%;
 }
 
 #tablero {

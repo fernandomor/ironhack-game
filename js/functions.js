@@ -23,9 +23,9 @@ function infoPersonaje(personaje) {
 }
 
 function respuestasPredefinidas(personaje) {
-    opcionUno.innerHTML = (characters.personaje.respuestas[0])
-    opcionDos.innerHTML = (characters.personaje.respuestas[1])
-    opcionTres.innerHTML = (characters.personaje.respuestas[2])
+    opcionUno.innerHTML = (personaje.respuestas[0])
+    opcionDos.innerHTML = (personaje.respuestas[1])
+    opcionTres.innerHTML = (personaje.respuestas[2])
 }
 
 function getMousePos(canvas, evt) {
@@ -34,102 +34,109 @@ function getMousePos(canvas, evt) {
         x: Math.floor(evt.clientX - rect.left),
         y: Math.floor(evt.clientY - rect.top)
     };
-} <<
-<< << < HEAD
+}
 
-function comparePos(personaje, mouseP) { ===
-    === =
-    function reset() {
-        statusRndDos = false
-        statusRnd = false
-        nubesAct = false
-        imgRef.innerHTML = ""
-        msgPersonaje.innerHTML = ""
-        musPersonaje.innerHTML = ""
-    }
+function reset() {
+    statusRndDos = false
+    statusRnd = false
+    nubesAct = false
+    imgRef.innerHTML = ""
+    msgPersonaje.innerHTML = ""
+    musPersonaje.innerHTML = ""
+}
 
-    function comparePos(personaje, mouseP) { >>>
-        >>> > 26 c8e99ff3b7fc0acd60bd88b4b382416267af09
-        let mousePos = mouseP
-        let personajePos = personaje
-        if (mousePos.x > personajePos.x && mousePos.x < (personajePos.x + personajePos.width)) {
-            if (mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)) {
-                numPuntaje += 500
-                numNivel++
-                <<
-                << << < HEAD
-                    ===
-                    === =
-                    mostrarPregunta()
-                reset() >>>
-                    >>> > 26 c8e99ff3b7fc0acd60bd88b4b382416267af09
-            }
-        } else {
-            numVidas--
+function comparePos(personaje, mouseP) {
+    let mousePos = mouseP
+    let personajePos = personaje
+    if (mousePos.x > personajePos.x && mousePos.x < (personajePos.x + personajePos.width)) {
+        if (mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.height + 20)) {
+            numPuntaje += 500
+            numNivel++
+            mostrarPregunta()
+            reset()
         }
+    } else if (numVidas === 0) {
+        looser()
+        reset()
+    } else {
+        numVidas--
     }
+}
 
-    function respuestaCorrecta(opcion) {
-        let palabra = opcion.innerHTML
-        if (arrRespuestasCorrectas.includes(palabra)) {
-            alert("respuesta correcta , te dare unos puntos extras")
-            seccionPreguntas.classList.add("esconder")
-            numPuntaje += 300
-        } else {
-            nubesAct = true
-            alert("respuesta INCORRECTA, pero te dejo mi foto")
-            seccionPreguntas.classList.add("esconder")
+function comparePos(personaje, mouseP) {
+    let mousePos = mouseP
+    let personajePos = personaje
+    if (mousePos.x > personajePos.x && mousePos.x < (personajePos.x + personajePos.width)) {
+        if (mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)) {
+            numPuntaje += 500
+            numNivel++
+
+            mostrarPregunta()
+            reset()
+
         }
-        if (mostrarSeccionPreguntas === true) {
-            mostrarSeccionPreguntas = false
-        }
+    } else {
+        numVidas--
     }
+}
 
-    function mostrarPregunta() {
-        if (mostrarSeccionPreguntas === false) {
-            seccionPreguntas.classList.remove("esconder")
-            mostrarSeccionPreguntas = true
-        }
+function respuestaCorrecta(opcion) {
+    let palabra = opcion.innerHTML
+    if (arrRespuestasCorrectas.includes(palabra)) {
+        alert("respuesta correcta , te dare unos puntos extras")
+        seccionPreguntas.classList.add("esconder")
+        numPuntaje += 300
+    } else {
+        nubesAct = true
+        alert("respuesta INCORRECTA, pero te dejo mi foto")
+        seccionPreguntas.classList.add("esconder")
     }
-
-    function looser() {
-        if (numVidas === 0) {
-            alert("NOS CONDENASTE A TODOS, GRACIAS")
-            numNivel = 1
-        }
+    if (mostrarSeccionPreguntas === true) {
+        mostrarSeccionPreguntas = false
     }
+}
 
-    function ganador() {
-        alert("NOS HAS SALVADO, ESTAMOS AGRADECIDOS")
+function mostrarPregunta() {
+    if (mostrarSeccionPreguntas === false) {
+        seccionPreguntas.classList.remove("esconder")
+        mostrarSeccionPreguntas = true
+    }
+}
+
+function looser() {
+    if (numVidas === 0) {
+        alert("NOS CONDENASTE A TODOS, GRACIAS")
         numNivel = 1
     }
+}
 
-    function niveles(objCharacters, clasPersonaje, clasFondo) {
-        ctx.clearRect(0, 0, 900, 600)
-        if (mostrarSeccionPreguntas === false) {
-            if (statusRndDos === false) {
-                infoPersonaje(objCharacters)
-                statusRndDos = true
-            }
-            if (nubesAct === true) {
-                ctx.clearRect(0, 0, 900, 600)
-                nubes.mover()
-                clasFondo.dibujar()
-                clasPersonaje.dibujar()
-                nubes.dibujar()
-            } else {
-                clasFondo.dibujar()
-                clasPersonaje.dibujar()
-            }
+function ganador() {
+    alert("NOS HAS SALVADO, ESTAMOS AGRADECIDOS")
+    numNivel = 1
+}
+
+function niveles(objCharacters, clasPersonaje, clasFondo) {
+    ctx.clearRect(0, 0, 900, 600)
+    if (mostrarSeccionPreguntas === false) {
+        if (statusRndDos === false) {
+            infoPersonaje(objCharacters)
+            statusRndDos = true
         }
-        if (statusRnd === false) {
-            clasPersonaje.positionRnd()
-            respuestasPredefinidas(objCharacters)
-            musicaPersonaje(objCharacters)
-            statusRnd = true
+        if (nubesAct === true) {
+            ctx.clearRect(0, 0, 900, 600)
+            nubes.mover()
+            clasFondo.dibujar()
+            clasPersonaje.dibujar()
+            nubes.dibujar()
+        } else {
+            clasFondo.dibujar()
+            clasPersonaje.dibujar()
         }
     }
-
-
-    //los obejots  se pasan como tal osea character.ladyGaga , no puedes pasar a ladygaga como un argumento 
-    //en los métodos si puedes hacer eso porque los inicializas en una variable
+    if (statusRnd === false) {
+        clasPersonaje.positionRnd()
+        respuestasPredefinidas(objCharacters)
+        musicaPersonaje(objCharacters)
+        statusRnd = true
+    }
+}
