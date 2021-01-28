@@ -15,37 +15,37 @@ const arrRespuestasCorrectas = ["Lady Gaga","AMLO","La brittany","Elton John","J
 //OBJETOS Y ARREGLOS
 const characters = {
     ladyGaga: {
-        img: "./img/ladygaga.jpg",
+        img: "./img/ladygaga-ref.jpg",
         cancion: "./Canciones/pokerface.mp3",
         respuestas: ["Hannah Montana", "Lady Gaga", "Beyonce"],
         mensaje: "Gracias pequeño mounstro por saber que soy tu mama mounstra"
     },
     amlo: {
-        img: "./img/peje.jpeg",
+        img: "./img/amlo-ref.jpeg",
         cancion: "./Canciones/amlo.mp3",
         respuestas: ["AMLO", "Musollini", "Hitler"],
         mensaje: "Grajias .....pejelagarto....... por.....todo, y el PRI roboj maj"
     },
     spears: {
-        img: "./img/britneySpears.png",
+        img: "./img/britneySpears-ref.png",
         cancion: "./Canciones/spears.mp3",
         respuestas: ["La brittany", "Kim Kardashian", "Madonna"],
         mensaje: "Ups baby, si soy yo"
     },
     elton: {
-        img: "./img/elton.png",
+        img: "./img/elton-ref.png",
         cancion: "./Canciones/saturday.mp3",
         respuestas: ["Billy Joel", "Freddie Mercury", "Elton John"],
         mensaje: "Ya quiero mi taza de té, gracias por buscarme rocketman"
     },
     theDoors: {
-        img: "./img/morrison.jpg",
+        img: "./img/morrison-ref.jpg",
         cancion: "./Canciones/doors.mp3",
         respuestas: ["Jonh Lennon", "Kurt Cobain", "Jim Morrison"],
         mensaje: "Abriste la puerta correcta, salvame"
     },
     metallica: {
-        img: "./img/james.png",
+        img: "./img/james-ref.png",
         cancion: "./Canciones/metalica.mp3",
         respuestas: ["James Hetfield", "Lars Ulrich", "Paul Stanley"],
         mensaje: "Justicia para todos, incluso para ti"

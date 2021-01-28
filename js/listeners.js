@@ -4,12 +4,12 @@ let fondoCuatro = new ImagenInit(900, 600, 0, 0, "./img/nivel2.jpg")
 let fondoCinco = new ImagenInit(900, 600, 0, 0, "./img/nivel3.jpg")
 let fondoSeis = new ImagenInit(900, 600, 0, 0, "./img/nivel4.png")
 
-let spears = new Personaje(100, 100, 0, 0, "./img/britneySpears.png", 1)
-let elton = new Personaje(100, 100, 0, 0, "./img/elton.png", 2)
-let ladyGaga = new Personaje(100, 100, 0, 0, "./img/ladygaga.jpg", 3)
-let theDoors = new Personaje(100, 100, 0, 0, "./img/morrison.jpg", 4)
-let amlo = new Personaje(100, 100, 0, 0, "./img/peje.jpeg", 5)
-let metallica = new Personaje(100, 100, 0, 0, "./img/james.png", 6)
+let spears = new Personaje(150, 250, 0, 0, "./img/britneySpears.png", 1)
+let elton = new Personaje(100, 150, 0, 0, "./img/elton.png", 2)
+let ladyGaga = new Personaje(80, 150, 0, 0, "./img/ladygaga.png", 3)
+let theDoors = new Personaje(70, 70, 0, 0, "./img/morrison.png", 4)
+let amlo = new Personaje(60, 60, 0, 0, "./img/amlo.png", 5)
+let metallica = new Personaje(50, 80, 0, 0, "./img/james.png", 6)
 
 let nubes = new Nubes(900, 800, 0, 0, "./img/nubes.png")
 //INICIAR JUEGO

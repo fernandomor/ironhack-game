@@ -49,7 +49,11 @@ function comparePos(personaje,mouseP){
             mostrarPregunta()
             reset()
         }
-    }else{
+    }else if(numVidas===0){
+        looser()
+        reset()
+    }
+        else{
         numVidas--
     }
 }
