@@ -88,8 +88,8 @@ class ImagenInit {
 //PERSONAJES
 class Personaje extends ImagenInit {
     positionRnd() {
-        this.x = Math.floor(Math.random() * canva.width)
-        this.y = Math.floor(Math.random() * canva.height)
+        this.x = Math.floor(Math.random() * canva.width-30)
+        this.y = Math.floor(Math.random() * canva.height-30)
     }
 }
 //NUBES
