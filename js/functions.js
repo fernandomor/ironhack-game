@@ -42,6 +42,7 @@ function reset() {
     imgRef.innerHTML = ""
     msgPersonaje.innerHTML = ""
     musPersonaje.innerHTML = ""
+    numVidas = 3
 }
 
 function comparePos(personaje, mouseP) {
@@ -54,7 +55,7 @@ function comparePos(personaje, mouseP) {
             mostrarPregunta()
             reset()
         }
-    } else if (numVidas === 0) {
+    } else if (numVidas < 1) {
         looser()
         reset()
     } else {
@@ -85,7 +86,7 @@ function mostrarPregunta() {
 }
 
 function looser() {
-    if (numVidas === 0) {
+    if (numVidas < 1) {
         modal[1].style.display = "block"
         numNivel = 1
     }
