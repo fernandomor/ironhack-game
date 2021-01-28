@@ -5,7 +5,7 @@ let fondoCinco = new ImagenInit(900, 600, 0, 0, "./img/nivel3.jpg")
 let fondoSeis = new ImagenInit(900, 600, 0, 0, "./img/nivel4.png")
 
 let spears = new Personaje(150, 250, 0, 0, "./img/britneySpears.png", 1)
-let elton = new Personaje(100, 150, 0, 0, "./img/elton.png", 2)
+let elton = new Personaje(90, 150, 0, 0, "./img/elton.png", 2)
 let ladyGaga = new Personaje(80, 150, 0, 0, "./img/ladygaga.png", 3)
 let theDoors = new Personaje(70, 70, 0, 0, "./img/morrison.png", 4)
 let amlo = new Personaje(60, 60, 0, 0, "./img/amlo.png", 5)

@@ -69,7 +69,10 @@ body {
     justify-content: space-evenly;
     margin-top: 2%;
 }
-
+#mensaje{
+    color: #0d20a9;
+    font-size: 20px;
+}
 #tablero {
     max-width: 25%;
     display: flex;
