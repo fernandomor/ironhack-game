@@ -12,7 +12,6 @@ function musicaPersonaje(personaje) {
     Your browser does not support the audio tag.
     </audio>`
 }
-
 function infoPersonaje(personaje) {
     let divImg = document.createElement("div")
     let divMsg = document.createElement("div")
@@ -62,7 +61,6 @@ function comparePos(personaje, mouseP) {
         numVidas--
     }
 }
-
 function respuestaCorrecta(opcion) {
     let palabra = opcion.innerHTML
     if (arrRespuestasCorrectas.includes(palabra)) {
@@ -88,7 +86,7 @@ function mostrarPregunta() {
 
 function looser() {
     if (numVidas === 0) {
-        alert("NOS CONDENASTE A TODOS, GRACIAS")
+        modal.style.display = "block";
         numNivel = 1
     }
 }
