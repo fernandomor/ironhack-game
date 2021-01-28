@@ -12,17 +12,17 @@ let amlo = new Personaje(60, 60, 0, 0, "./img/amlo.png", 5)
 let metallica = new Personaje(50, 80, 0, 0, "./img/james.png", 6)
 
 let nubes = new Nubes(900, 800, 0, 0, "./img/nubes.png")
-//INICIAR JUEGO
-botonStart.addEventListener("click", ()=>{
-    divInicio.classList.add("esconder")
-    canva.classList.remove("esconder")
-    canva.classList.add("mostrar")
-})
-//BOTONES DE RESPUESTAS
-opcionUno.addEventListener("click", ()=>{
+    //INICIAR JUEGO
+botonStart.addEventListener("click", () => {
+        divInicio.classList.add("esconder")
+        canva.classList.remove("esconder")
+        canva.classList.add("mostrar")
+    })
+    //BOTONES DE RESPUESTAS
+opcionUno.addEventListener("click", () => {
     respuestaCorrecta(opcionUno)
 })
-opcionDos.addEventListener("click", ()=>{
+opcionDos.addEventListener("click", () => {
     respuestaCorrecta(opcionDos)
 })
 opcionTres.addEventListener("click", ()=>{
@@ -52,7 +52,7 @@ canva.addEventListener (`mousedown`, (e) => {
     }else if(numNivel === 6){
         comparePos(metallica,mousePos)
     }
-    
+
 });
 
 
@@ -60,3 +60,10 @@ canva.addEventListener (`mousedown`, (e) => {
 
 
 
+
+//POSICIÓN DEL MOUSE
+canva.addEventListener(`mousedown`, (e) => {
+    let mousePos = getMousePos(canva, e)
+        // comparePos(britney, mousePos)
+});
+//como pasar esto a funcion ?- ahi se puede poner una funcion que retorne el nombre del personaje
