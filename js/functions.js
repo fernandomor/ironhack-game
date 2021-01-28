@@ -43,7 +43,7 @@ function comparePos(personaje,mouseP){
     let mousePos = mouseP
     let personajePos = personaje
     if(mousePos.x>personajePos.x && mousePos.x < (personajePos.x+personajePos.width)){
-        if(mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.width)){
+        if(mousePos.y > personajePos.y && mousePos.y < (personajePos.y + personajePos.height+20)){
             numPuntaje += 500
             numNivel++
             mostrarPregunta()
