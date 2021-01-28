@@ -12,7 +12,6 @@ function musicaPersonaje(personaje) {
     Your browser does not support the audio tag.
     </audio>`
 }
-
 function infoPersonaje(personaje) {
     let divImg = document.createElement("div")
     let divMsg = document.createElement("div")
