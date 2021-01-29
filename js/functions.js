@@ -43,6 +43,7 @@ function reset() {
     imgRef.innerHTML = ""
     msgPersonaje.innerHTML = ""
     musPersonaje.innerHTML = ""
+    numVidas = 3
 }
 
 function comparePos(personaje, mouseP) {
@@ -55,7 +56,7 @@ function comparePos(personaje, mouseP) {
             mostrarPregunta()
             reset()
         }
-    } else if (numVidas === 0) {
+    } else if (numVidas < 1) {
         looser()
         reset()
     } else {
@@ -66,12 +67,12 @@ function comparePos(personaje, mouseP) {
 function respuestaCorrecta(opcion) {
     let palabra = opcion.innerHTML
     if (arrRespuestasCorrectas.includes(palabra)) {
-        alert("respuesta correcta , te dare unos puntos extras")
+        modal[3].style.display = "block"
         seccionPreguntas.classList.add("esconder")
         numPuntaje += 300
     } else {
         nubesAct = true
-        alert("respuesta INCORRECTA, pero te dejo mi foto")
+        modal[4].style.display = "block"
         seccionPreguntas.classList.add("esconder")
     }
     if (mostrarSeccionPreguntas === true) {
@@ -87,14 +88,14 @@ function mostrarPregunta() {
 }
 
 function looser() {
-    if (numVidas === 0) {
-        modal.style.display = "block";
+    if (numVidas < 1) {
+        modal[1].style.display = "block"
         numNivel = 1
     }
 }
 
 function ganador() {
-    alert("NOS HAS SALVADO, ESTAMOS AGRADECIDOS")
+    modal[2].style.display = "block"
     numNivel = 1
 }
 

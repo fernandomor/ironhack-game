@@ -1,3 +1,4 @@
+
 body {
     background-color: rgb(82, 154, 235);
     margin: 0px;
@@ -69,7 +70,10 @@ body {
     justify-content: space-evenly;
     margin-top: 2%;
 }
-
+#mensaje{
+    color: #0d20a9;
+    font-size: 20px;
+}
 #tablero {
     max-width: 25%;
     display: flex;
@@ -97,6 +101,7 @@ body {
   }
   
   .modal-content {
+    text-align: center;
     background-color: #fefefe;
     margin: 4% auto; 
     padding: 50px 100px;
@@ -123,4 +128,69 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .imgIntro{
+        width: 100%;
+        position: relative;
+        margin: 0px;
+    }
+    canvas{
+        width: 90%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-start{
+        width: 100px;
+    height: 40px;
+    font-size: 13px;
+    padding-top: 10px;
+    }
+    #contenedor{
+        top: 10px;
+    }
+    #preguntas h2{
+        font-size: 15px ;
+    }
+    #preguntas button{
+        font-size: 12px;
+    }
+    #preguntas{
+        position: initial;
+        margin-top: 300px;
+        margin-left: 0px;
+    }
+    #gameBoard {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+    #inicioJuego{
+        margin-top: 300px;
+    }
+    .modal-content {
+        font-size: 12px;
+        padding: 20px 20px;
+        width: 80%; 
+      }
+      .modal-content h2 {
+        font-size: 16px;
+      }
+      .modal-content img {
+        width: 80%; 
+      }
+      #tablero{
+          font-size: 12px;
+          min-width: 80%;
+          margin-right: auto;
+          margin-left: auto;
+          margin-bottom: 20px;
+      }
+      #tablero img{
+        width: 40%;
+    }
+    #mensaje{
+        font-size: 12px;
+    }
   }
