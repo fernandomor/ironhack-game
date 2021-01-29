@@ -65,10 +65,9 @@ let musPersonaje = document.querySelector("#musica")
 let opcionUno = document.querySelector("#op1")
 let opcionDos = document.querySelector("#op2")
 let opcionTres = document.querySelector("#op3")
-let modalInstrucciones = document.getElementById("myModalInstrucciones")
-let myModalLooser = document.getElementById("myModalLooser")
-let span = document.getElementsByClassName("close")[0]
-let span2 = document.getElementsByClassName("close")[1]
+let modal = document.querySelectorAll("#myModal")
+let span = document.querySelectorAll("#close")
+
 
 //CLASES
 //IMAGEN PADRE

@@ -88,7 +88,7 @@ function mostrarPregunta() {
 
 function looser() {
     if (numVidas === 0) {
-        alert("NOS CONDENASTE A TODOS, GRACIAS")
+        modal.style.display = "block";
         numNivel = 1
     }
 }
