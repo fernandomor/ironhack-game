@@ -43,7 +43,6 @@ function reset() {
     msgPersonaje.innerHTML = ""
     musPersonaje.innerHTML = ""
     numVidas = 3
-    numPuntaje = 0
 }
 
 function comparePos(personaje, mouseP) {
@@ -90,6 +89,7 @@ function looser() {
     if (numVidas < 1) {
         modal[1].style.display = "block"
         numNivel = 1
+        numPuntaje = 0
     }
 }
 
