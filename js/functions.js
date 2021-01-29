@@ -43,6 +43,7 @@ function reset() {
     msgPersonaje.innerHTML = ""
     musPersonaje.innerHTML = ""
     numVidas = 3
+    numPuntaje = 0
 }
 
 function comparePos(personaje, mouseP) {
