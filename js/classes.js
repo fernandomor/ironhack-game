@@ -18,19 +18,19 @@ const characters = {
             img: "./img/ladygaga-ref.jpg",
             cancion: "./Canciones/pokerface.mp3",
             respuestas: ["Hannah Montana", "Lady Gaga", "Beyonce"],
-            mensaje: "Gracias pequeño mounstro por saber que soy tu mama mounstra"
+            mensaje: "Gracias pequeño mounstro por saber que soy tu mamá mounstro"
         },
         amlo: {
             img: "./img/amlo-ref.jpeg",
             cancion: "./Canciones/amlo.mp3",
             respuestas: ["AMLO", "Musollini", "Hitler"],
-            mensaje: "Grajias .....pejelagarto....... por.....todo, y el PRI roboj maj"
+            mensaje: "Grajias ...pejelagarto... por...jalvarme, juntoj contra Riqui Riquin Canallin y contra el PRI qué roboj maj"
         },
         spears: {
             img: "./img/britneySpears-ref.png",
             cancion: "./Canciones/spears.mp3",
             respuestas: ["La brittany", "Kim Kardashian", "Madonna"],
-            mensaje: "Ups baby, si soy yo"
+            mensaje: "Ups baby, esta soy yo, muack :*"
         },
         elton: {
             img: "./img/elton-ref.png",
@@ -42,7 +42,7 @@ const characters = {
             img: "./img/morrison-ref.jpg",
             cancion: "./Canciones/doors.mp3",
             respuestas: ["Jonh Lennon", "Kurt Cobain", "Jim Morrison"],
-            mensaje: "Abriste la puerta correcta, salvame"
+            mensaje: "Abriste la puerta correcta, sálvame"
         },
         metallica: {
             img: "./img/james-ref.png",
